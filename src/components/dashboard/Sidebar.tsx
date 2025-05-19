@@ -1,6 +1,6 @@
 
 import React from "react";
-import { SignOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 const Sidebar: React.FC = () => {
   return (
@@ -149,7 +149,7 @@ const Sidebar: React.FC = () => {
           <div
             className="flex min-h-[46px] w-full items-center gap-3 px-7 max-md:px-5 hover:bg-gray-100 cursor-pointer rounded-md transition-colors"
           >
-            <SignOut className="w-[18px] h-[18px] text-[#68727D]" />
+            <LogOut className="w-[18px] h-[18px] text-[#68727D]" />
             <div
               className="text-[#68727D] self-stretch flex-1 shrink basis-[0%] my-auto"
             >
