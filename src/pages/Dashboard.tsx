@@ -1,5 +1,4 @@
 import React from "react";
-import Sidebar from "../components/dashboard/Sidebar";
 import StatsCard from "../components/dashboard/StatsCard";
 import DashboardAlert from "../components/dashboard/DashboardAlert";
 import PortfolioTable from "../components/dashboard/PortfolioTable";
@@ -7,6 +6,7 @@ import NotificationCard from "../components/dashboard/NotificationCard";
 import ActivityCard from "../components/dashboard/ActivityCard";
 import QuickActionCard from "../components/dashboard/QuickActionCard";
 import SearchBox from "../components/dashboard/SearchBox";
+import { Link } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
   // Stats cards data
@@ -40,24 +40,28 @@ const Dashboard: React.FC = () => {
       growth: "+2% monthly growth"
     }
   ];
-
-  // Quick action cards data
+  
+  // Quick action cards data with navigation links
   const quickActions = [
     {
       title: "Manage Accounts",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/c7e507886f4eca8f8f4a290c102818d1c6245c62?placeholderIfAbsent=true"
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/c7e507886f4eca8f8f4a290c102818d1c6245c62?placeholderIfAbsent=true",
+      link: "/accounts"
     },
     {
       title: "View Reports",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/c7e507886f4eca8f8f4a290c102818d1c6245c62?placeholderIfAbsent=true"
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/c7e507886f4eca8f8f4a290c102818d1c6245c62?placeholderIfAbsent=true",
+      link: "/reports"
     },
     {
       title: "Generate Summaries",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true"
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true",
+      link: "/reports"
     },
     {
       title: "Add New FI",
-      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true"
+      icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true",
+      link: "/institutions"
     }
   ];
 
@@ -66,12 +70,7 @@ const Dashboard: React.FC = () => {
       className="bg-[rgba(250,250,252,1)] pr-8 max-md:pr-5"
     >
       <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-        <div className="w-1/5 max-md:w-full max-md:ml-0">
-          <Sidebar />
-        </div>
-        <div
-          className="w-4/5 ml-5 max-md:w-full max-md:ml-0"
-        >
+        <div className="w-full ml-5 max-md:w-full max-md:ml-0">
           <div className="w-full mt-8 max-md:max-w-full max-md:mt-10">
             <div
               className="w-full max-md:max-w-full"
@@ -154,14 +153,15 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
             
-            {/* Quick Action Cards */}
+            {/* Quick Action Cards with navigation links */}
             <div className="flex items-stretch gap-6 flex-wrap mt-[23px]">
               {quickActions.map((action, index) => (
-                <QuickActionCard
-                  key={index}
-                  title={action.title}
-                  icon={action.icon}
-                />
+                <Link key={index} to={action.link} className="text-inherit no-underline">
+                  <QuickActionCard
+                    title={action.title}
+                    icon={action.icon}
+                  />
+                </Link>
               ))}
             </div>
           </div>
