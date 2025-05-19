@@ -16,46 +16,67 @@ const PortfolioTable: React.FC = () => {
   // Sample data for the table
   const portfolioData: PortfolioData[] = [
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "4,856",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Agricultural Bank of Sudan", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "12,450",
+      totalInsuredLand: "156,856",
+      financialExposure: "$2,345,678"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "497",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Farmers Cooperative Bank", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "8,723",
+      totalInsuredLand: "98,497",
+      financialExposure: "$1,876,543"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "2,373",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Rural Development Bank", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "15,234",
+      totalInsuredLand: "182,373",
+      financialExposure: "$3,123,456"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "3,284",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "National Agricultural Bank", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "10,567",
+      totalInsuredLand: "143,284",
+      financialExposure: "$2,654,789"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "583",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Microfinance Initiative", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "5,892",
+      totalInsuredLand: "76,583",
+      financialExposure: "$987,654"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "583",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Regional Farmers Bank", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "7,345",
+      totalInsuredLand: "89,583",
+      financialExposure: "$1,543,210"
     },
     {
-      institution: { name: "Admin Name", avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" },
-      totalFarmers: "4,000 m2",
-      totalInsuredLand: "583",
-      financialExposure: "$1,234.56"
+      institution: { 
+        name: "Agricultural Credit Union", 
+        avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
+      },
+      totalFarmers: "6,789",
+      totalInsuredLand: "92,583",
+      financialExposure: "$1,234,567"
     }
   ];
 

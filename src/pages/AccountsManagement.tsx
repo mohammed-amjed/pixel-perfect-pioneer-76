@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,79 +23,79 @@ import { Filter, Plus, Search } from "lucide-react";
 // Dummy data for the accounts
 const accountsData = [
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Ahmed Hassan",
+    email: "a.hassan@agribank.com",
+    institution: "Agricultural Bank of Sudan",
+    location: "Khartoum, Sudan",
+    position: "Senior Risk Analyst",
     permissions: "Full",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Sarah Mohamed",
+    email: "s.mohamed@fcbank.com",
+    institution: "Farmers Cooperative Bank",
+    location: "Al-Jazeera, Sudan",
+    position: "Portfolio Manager",
     permissions: "Partial",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Karim Ali",
+    email: "k.ali@rdb.com",
+    institution: "Rural Development Bank",
+    location: "River Nile, Sudan",
+    position: "Risk Assessment Officer",
     permissions: "View",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Fatima Ibrahim",
+    email: "f.ibrahim@nab.com",
+    institution: "National Agricultural Bank",
+    location: "North Kordofan, Sudan",
+    position: "Senior Analyst",
     permissions: "Full",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Omar Khalil",
+    email: "o.khalil@microfi.com",
+    institution: "Microfinance Initiative",
+    location: "White Nile, Sudan",
+    position: "Risk Manager",
     permissions: "Partial",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Layla Ahmed",
+    email: "l.ahmed@rfb.com",
+    institution: "Regional Farmers Bank",
+    location: "Kassala, Sudan",
+    position: "Data Analyst",
     permissions: "View",
     lastLogin: "03.03.2025"
   },
   {
-    name: "Admin Username",
-    email: "username@mail.com",
-    institution: "Institution Name",
-    location: "Country, State",
-    position: "Job Title",
+    name: "Youssef Mahmoud",
+    email: "y.mahmoud@acu.com",
+    institution: "Agricultural Credit Union",
+    location: "Red Sea, Sudan",
+    position: "Portfolio Analyst",
     permissions: "Partial",
     lastLogin: "03.03.2025"
-  },
+  }
 ];
 
 const AccountsManagement: React.FC = () => {
   return (
     <AppLayout 
       title="Accounts Management" 
-      subtitle="Accounts Overviews"
+      subtitle="Accounts Overview"
       actionButton={
         <Button className="bg-[#83C541] hover:bg-[#6fa32e] flex items-center gap-2">
           <Plus className="h-4 w-4" />
-          Add X
+          Add Account
         </Button>
       }
     >

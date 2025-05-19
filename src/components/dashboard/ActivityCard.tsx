@@ -3,26 +3,31 @@ import React from "react";
 interface Activity {
   username: string;
   description: string;
+  timestamp?: string;
 }
 
 const ActivityCard: React.FC = () => {
   // Sample activities
   const activities: Activity[] = [
     {
-      username: "Username",
-      description: "Activity Description"
+      username: "Ahmed Hassan",
+      description: "Updated risk assessment for Farm ID #F123",
+      timestamp: "2 hours ago"
     },
     {
-      username: "Username",
-      description: "Activity Description"
+      username: "Sarah Mohamed",
+      description: "Added new farmer profile in Al-Jazeera region",
+      timestamp: "4 hours ago"
     },
     {
-      username: "Username",
-      description: "Activity Description"
+      username: "Karim Ali",
+      description: "Generated monthly risk report for March 2025",
+      timestamp: "5 hours ago"
     },
     {
-      username: "Username",
-      description: "Activity Description"
+      username: "Fatima Ibrahim",
+      description: "Modified land parameters for Farm ID #F456",
+      timestamp: "1 day ago"
     }
   ];
 
@@ -68,10 +73,15 @@ const ActivityCard: React.FC = () => {
                   {activity.username}
                 </div>
                 <div
-                  className="text-[#68727D] text-sm font-medium leading-none"
+                  className="text-[#68727D] text-sm font-medium leading-none mt-1"
                 >
                   {activity.description}
                 </div>
+                {activity.timestamp && (
+                  <div className="text-[#68727D] text-xs mt-1">
+                    {activity.timestamp}
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -4,23 +4,27 @@ interface Notification {
   title: string;
   description: string;
   isNew?: boolean;
+  timestamp?: string;
 }
 
 const NotificationCard: React.FC = () => {
   // Sample notifications
   const notifications: Notification[] = [
     {
-      title: "Notification",
-      description: "Notification Description",
-      isNew: true
+      title: "High Risk Alert",
+      description: "Farm ID #F789 shows critical risk levels",
+      isNew: true,
+      timestamp: "10 minutes ago"
     },
     {
-      title: "Notification",
-      description: "Notification Description"
+      title: "Weather Warning",
+      description: "Potential drought conditions in Al-Jazeera region",
+      timestamp: "1 hour ago"
     },
     {
-      title: "Notification",
-      description: "Notification Description"
+      title: "System Update",
+      description: "New risk assessment model deployed",
+      timestamp: "2 hours ago"
     }
   ];
 
@@ -71,10 +75,15 @@ const NotificationCard: React.FC = () => {
                 {notification.title}
               </div>
               <div
-                className="text-[#68727D] text-sm font-medium leading-none"
+                className="text-[#68727D] text-sm font-medium leading-none mt-1"
               >
                 {notification.description}
               </div>
+              {notification.timestamp && (
+                <div className="text-[#68727D] text-xs mt-1">
+                  {notification.timestamp}
+                </div>
+              )}
             </div>
           </div>
           {notification.isNew && (
@@ -82,7 +91,7 @@ const NotificationCard: React.FC = () => {
               className="self-stretch flex items-center gap-2.5 text-sm text-[#EFA22F] font-medium whitespace-nowrap leading-none my-auto"
             >
               <div
-                className="text-[#EFA22F] self-stretch bg-[rgba(239,162,47,0.10)] gap-1 pr-[var(--Main-System-8px,] my-auto pl-[}] pt-[2px)] pb-[8px;] rounded-[128px]"
+                className="text-[#EFA22F] self-stretch bg-[rgba(239,162,47,0.10)] px-2 py-1 rounded-[128px]"
               >
                 New
               </div>
