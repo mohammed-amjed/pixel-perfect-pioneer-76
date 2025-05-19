@@ -27,8 +27,42 @@ import {
   PaginationPrevious 
 } from "@/components/ui/pagination";
 
+// Type definitions for our data
+interface Farmer {
+  id: string;
+  name: string;
+  email: string;
+  landSize: string;
+  riskLevel: "Low" | "Moderate" | "High";
+  lastViewed: string;
+  lastUpdate: string;
+}
+
+interface Farm {
+  id: string;
+  name: string;
+  email: string;
+  soilType: string;
+  cropType: string;
+  amount: string;
+  landSize: string;
+  date: string;
+}
+
+interface Stats {
+  count: number | string;
+  growth: string;
+}
+
+interface StatsData {
+  farmers: Stats;
+  policies: Stats;
+  claims: Stats;
+  land: Stats;
+}
+
 // Enhanced dummy data for farmers
-const farmersData = [
+const farmersData: Farmer[] = [
   {
     id: "F326891",
     name: "Ahmed Hassan",
@@ -95,7 +129,7 @@ const farmersData = [
 ];
 
 // Enhanced dummy data for farms
-const farmsData = [
+const farmsData: Farm[] = [
   {
     id: "FR001",
     name: "Ahmed Hassan",
@@ -169,15 +203,21 @@ const farmsData = [
 ];
 
 // Enhanced statistics data
-const statsData = {
-  farmers: { count: 1,247, growth: "+3.2% monthly growth" },
+const statsData: StatsData = {
+  farmers: { count: 1247, growth: "+3.2% monthly growth" },
   policies: { count: 892, growth: "+2.8% monthly growth" },
   claims: { count: 156, growth: "+1.5% monthly growth" },
   land: { count: "42,600 m²", growth: "+4.1% monthly growth" }
 };
 
 const InstituteReports: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("portfolio");
+  const [activeTab, setActiveTab] = useState<"portfolio" | "reports">("portfolio");
+  
+  const handleRowClick = (id: string) => {
+    if (typeof id === 'string') {
+      window.location.href = `/farmer/${id}`;
+    }
+  };
   
   return (
     <AppLayout 
@@ -323,11 +363,11 @@ const InstituteReports: React.FC = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {farmersData.map((farmer, index) => (
+                {farmersData.map((farmer) => (
                   <TableRow 
-                    key={index}
+                    key={farmer.id}
                     className="cursor-pointer hover:bg-gray-50"
-                    onClick={() => window.location.href = `/farmer/${farmer.id}`}
+                    onClick={() => handleRowClick(farmer.id)}
                   >
                     <TableCell className="text-center" onClick={(e) => e.stopPropagation()}>
                       <input type="checkbox" className="rounded" />
@@ -503,11 +543,11 @@ const InstituteReports: React.FC = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {farmsData.map((farm, index) => (
+                {farmsData.map((farm) => (
                   <TableRow 
-                    key={index}
+                    key={farm.id}
                     className="cursor-pointer hover:bg-gray-50"
-                    onClick={() => window.location.href = `/farmer/${farm.id}`}
+                    onClick={() => handleRowClick(farm.id)}
                   >
                     <TableCell className="text-center" onClick={(e) => e.stopPropagation()}>
                       <input type="checkbox" className="rounded" />
