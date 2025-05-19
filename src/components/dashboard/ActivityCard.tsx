@@ -3,7 +3,9 @@ import React from "react";
 interface Activity {
   username: string;
   description: string;
-  timestamp?: string;
+  timestamp: string;
+  icon?: string;
+  type?: 'update' | 'add' | 'generate' | 'modify';
 }
 
 const ActivityCard: React.FC = () => {
@@ -12,98 +14,97 @@ const ActivityCard: React.FC = () => {
     {
       username: "Ahmed Hassan",
       description: "Updated risk assessment for Farm ID #F123",
-      timestamp: "2 hours ago"
+      timestamp: "2 hours ago",
+      type: 'update',
+      icon: "📊"
     },
     {
       username: "Sarah Mohamed",
       description: "Added new farmer profile in Al-Jazeera region",
-      timestamp: "4 hours ago"
+      timestamp: "4 hours ago",
+      type: 'add',
+      icon: "👨‍🌾"
     },
     {
       username: "Karim Ali",
       description: "Generated monthly risk report for March 2025",
-      timestamp: "5 hours ago"
+      timestamp: "5 hours ago",
+      type: 'generate',
+      icon: "📄"
     },
     {
       username: "Fatima Ibrahim",
       description: "Modified land parameters for Farm ID #F456",
-      timestamp: "1 day ago"
+      timestamp: "1 day ago",
+      type: 'modify',
+      icon: "🌱"
     }
   ];
 
+  const getBackgroundColor = (type: string) => {
+    switch (type) {
+      case 'update':
+        return 'bg-blue-50';
+      case 'add':
+        return 'bg-green-50';
+      case 'generate':
+        return 'bg-purple-50';
+      case 'modify':
+        return 'bg-orange-50';
+      default:
+        return 'bg-gray-50';
+    }
+  };
+
   return (
-    <div
-      className="items-stretch border border-[color:var(--Stroke-Base,#EAECF0)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.04)] flex min-h-[422px] w-full flex-col overflow-hidden bg-white mt-6 rounded-2xl border-solid"
-    >
-      <div
-        className="border flex w-full flex-col items-stretch text-base text-[#252525] font-semibold justify-center px-5 py-4 border-[rgba(234,236,240,1)] border-solid"
-      >
-        <div
-          className="text-[#252525] w-full pr-7 max-md:pr-5"
-        >
+    <div className="bg-white rounded-2xl border border-[#EAECF0] shadow-sm overflow-hidden mt-6">
+      <div className="px-5 py-4 border-b border-[#EAECF0] flex justify-between items-center">
+        <h3 className="text-base font-semibold text-[#252525]">
           Latest Activity
-        </div>
+        </h3>
+        <button className="w-6 h-6 flex items-center justify-center">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd47db5fdb0eb8d4774ddab0e48f7d9b884df3f1?placeholderIfAbsent=true"
+            className="w-full h-full"
+            alt="Options"
+          />
+        </button>
       </div>
-      <div
-        className="flex min-h-[312px] w-full flex-col items-stretch justify-center px-5"
-      >
+      
+      <div className="divide-y divide-[#EAECF0]">
         {activities.map((activity, index) => (
           <div
             key={index}
-            className={`flex w-full items-center gap-2.5 py-4 ${index < activities.length - 1 ? 'border-[rgba(234,236,240,1)] border-b' : ''}`}
+            className="p-4 flex items-start gap-3"
           >
-            <div
-              className="items-center self-stretch flex gap-2.5 my-auto"
-            >
-              <div
-                className="bg-[rgba(252,238,240,1)] border self-stretch flex min-h-10 items-center justify-center w-10 h-10 my-auto rounded-[50px] border-[rgba(234,236,240,1)] border-solid"
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d13be515cb0d03f77adf8ddb6233aa007752df9?placeholderIfAbsent=true"
-                  className="aspect-[1] object-contain w-5 self-stretch my-auto"
-                  alt="Activity icon"
-                />
-              </div>
-              <div
-                className="self-stretch my-auto"
-              >
-                <div
-                  className="text-[#252525] text-[15px] font-semibold leading-none"
-                >
-                  {activity.username}
-                </div>
-                <div
-                  className="text-[#68727D] text-sm font-medium leading-none mt-1"
-                >
-                  {activity.description}
-                </div>
-                {activity.timestamp && (
-                  <div className="text-[#68727D] text-xs mt-1">
-                    {activity.timestamp}
-                  </div>
-                )}
-              </div>
+            <div className={`w-8 h-8 rounded-full ${getBackgroundColor(activity.type)} flex items-center justify-center flex-shrink-0`}>
+              {activity.icon}
+            </div>
+            
+            <div className="flex-1 min-w-0">
+              <h4 className="text-[15px] font-semibold text-[#252525]">
+                {activity.username}
+              </h4>
+              <p className="text-sm text-[#68727D] mt-1">
+                {activity.description}
+              </p>
+              <p className="text-xs text-[#68727D] mt-1">
+                {activity.timestamp}
+              </p>
             </div>
           </div>
         ))}
       </div>
-      <div
-        className="self-center flex min-h-[52px] w-full max-w-[352px] items-stretch gap-3 justify-center px-5 py-4 border-[rgba(234,236,240,1)] border-t"
-      >
-        <div
-          className="text-sm text-[#323539] font-medium leading-none w-[53px]"
-        >
+      
+      <div className="px-5 py-4 border-t border-[#EAECF0] flex justify-between items-center">
+        <button className="text-sm font-medium text-[#323539] hover:text-[#83C541] transition-colors">
           View All
-        </div>
-        <div
-          className="flex min-w-60 items-center gap-2 flex-1 shrink basis-[0%] my-auto"
-        >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true"
-            className="aspect-[1] object-contain w-5 self-stretch my-auto"
-            alt="Arrow right"
-          />
-        </div>
+        </button>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/6ccc255a3a91ff985dc0285627abb524d9c59ec0?placeholderIfAbsent=true"
+          className="w-5 h-5"
+          alt="Arrow right"
+        />
       </div>
     </div>
   );

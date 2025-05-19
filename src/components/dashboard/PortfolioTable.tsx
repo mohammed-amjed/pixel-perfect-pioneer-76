@@ -21,7 +21,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "12,450",
-      totalInsuredLand: "156,856",
+      totalInsuredLand: "156,856 m²",
       financialExposure: "$2,345,678"
     },
     {
@@ -30,7 +30,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "8,723",
-      totalInsuredLand: "98,497",
+      totalInsuredLand: "98,497 m²",
       financialExposure: "$1,876,543"
     },
     {
@@ -39,7 +39,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "15,234",
-      totalInsuredLand: "182,373",
+      totalInsuredLand: "182,373 m²",
       financialExposure: "$3,123,456"
     },
     {
@@ -48,7 +48,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "10,567",
-      totalInsuredLand: "143,284",
+      totalInsuredLand: "143,284 m²",
       financialExposure: "$2,654,789"
     },
     {
@@ -57,7 +57,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "5,892",
-      totalInsuredLand: "76,583",
+      totalInsuredLand: "76,583 m²",
       financialExposure: "$987,654"
     },
     {
@@ -66,7 +66,7 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "7,345",
-      totalInsuredLand: "89,583",
+      totalInsuredLand: "89,583 m²",
       financialExposure: "$1,543,210"
     },
     {
@@ -75,202 +75,96 @@ const PortfolioTable: React.FC = () => {
         avatar: "https://cdn.builder.io/api/v1/image/assets/TEMP/4c9fb13fafb8be2b49dd870b4d959307124e6292?placeholderIfAbsent=true" 
       },
       totalFarmers: "6,789",
-      totalInsuredLand: "92,583",
+      totalInsuredLand: "92,583 m²",
       financialExposure: "$1,234,567"
     }
   ];
 
   return (
-    <div
-      className="border border-[color:var(--Stroke-Base,#EAECF0)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.04)] w-full overflow-hidden bg-white mt-6 rounded-2xl border-solid max-md:max-w-full"
-    >
-      <div
-        className="relative w-full px-6 py-4 max-md:max-w-full max-md:px-5"
-      >
-        <div
-          className="text-[#252525] z-0 w-full text-base font-semibold pr-7 max-md:max-w-full max-md:pr-5"
-        >
+    <div className="border border-[color:var(--Stroke-Base,#EAECF0)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.04)] w-full overflow-hidden bg-white mt-6 rounded-2xl border-solid">
+      <div className="relative w-full px-6 py-4">
+        <div className="text-[#252525] text-base font-semibold">
           Portfolio Overview
         </div>
-        <div
-          className="absolute z-0 flex w-6 flex-col items-stretch justify-center right-5 bottom-4"
-        >
-          <div
-            className="flex min-h-6 w-full flex-col items-center justify-center"
-          >
+        <div className="absolute right-5 bottom-4">
+          <button className="w-6 h-6 flex items-center justify-center">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd47db5fdb0eb8d4774ddab0e48f7d9b884df3f1?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-full"
+              className="w-full h-full"
               alt="Options"
             />
-          </div>
+          </button>
         </div>
       </div>
-      <div
-        className="border-t-[color:var(--Stroke-Base,#EAECF0)] flex w-full overflow-hidden border-t border-solid max-md:max-w-full"
-      >
-        <div className="w-[191px]">
-          <div
-            className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-11 w-full gap-4 text-[13px] text-[#68727D] font-medium whitespace-nowrap leading-none bg-[#FAFAFC] px-6 py-[13px] border-b border-solid max-md:px-5"
-          >
-            <div
-              className="text-[#68727D] self-stretch gap-1 my-auto"
-            >
-              Institution
-            </div>
-          </div>
-          
-          {portfolioData.map((item, index) => (
-            <div
-              key={`institution-${index}`}
-              className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-16 w-full gap-4 px-6 py-4 border-b border-solid max-md:px-5"
-            >
-              <div
-                className="justify-center items-center border border-[color:var(--Stroke-Base,#EAECF0)] self-stretch flex min-h-8 w-8 h-8 bg-[#FAFAFC] my-auto rounded-[128px] border-solid"
-              >
-                <img
-                  src={item.institution.avatar}
-                  className="aspect-[1] object-contain w-5 self-stretch my-auto"
-                  alt="Institution avatar"
-                />
-              </div>
-              <div
-                className="text-[#252525] self-stretch text-[15px] font-semibold leading-none my-auto"
-              >
-                {item.institution.name}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div
-          className="text-[15px] text-[#68727D] font-medium leading-none w-[148px]"
-        >
-          <div
-            className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-11 w-full gap-4 text-[13px] leading-none bg-[#FAFAFC] px-6 py-[13px] border-b border-solid max-md:px-5"
-          >
-            <div
-              className="text-[#68727D] self-stretch gap-1 my-auto"
-            >
-              Total Farmers
-            </div>
-          </div>
-          
-          {portfolioData.map((item, index) => (
-            <div
-              key={`farmers-${index}`}
-              className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-16 w-full gap-4 text-sm text-[#68727D] leading-none px-6 py-[22px] border-b border-solid max-md:px-5"
-            >
-              <div
-                className="self-stretch my-auto"
-              >
-                {item.totalFarmers}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div
-          className="text-[15px] text-[#68727D] font-medium leading-none w-[164px]"
-        >
-          <div
-            className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-11 w-full gap-4 text-[13px] leading-none bg-[#FAFAFC] pl-6 pr-[21px] py-[13px] border-b border-solid max-md:px-5"
-          >
-            <div
-              className="text-[#68727D] self-stretch gap-1 my-auto"
-            >
-              Total Insured Land 
-            </div>
-          </div>
-          
-          {portfolioData.map((item, index) => (
-            <div
-              key={`land-${index}`}
-              className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-16 w-full gap-4 text-sm text-[#68727D] whitespace-nowrap leading-none px-6 py-[22px] border-b border-solid max-md:px-5"
-            >
-              <div
-                className="self-stretch my-auto"
-              >
-                {item.totalInsuredLand}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div
-          className="text-[15px] text-[#68727D] font-medium leading-none w-[156px]"
-        >
-          <div
-            className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-11 w-full gap-4 text-[13px] leading-none bg-[#FAFAFC] pl-6 pr-[15px] py-[13px] border-b border-solid max-md:pl-5"
-          >
-            <div
-              className="text-[#68727D] self-stretch gap-1 my-auto"
-            >
-              Financial Exposure
-            </div>
-          </div>
-          
-          {portfolioData.map((item, index) => (
-            <div
-              key={`exposure-${index}`}
-              className="items-center border-b-[color:var(--Stroke-Base,#EAECF0)] flex min-h-16 w-full gap-4 text-sm whitespace-nowrap leading-none px-6 py-[22px] border-b border-solid max-md:px-5"
-            >
-              <div
-                className="text-[#68727D] self-stretch my-auto"
-              >
-                {item.financialExposure}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/c3c9b89810e51fea3eb1cdb9b5c8a8c0eddb9f75?placeholderIfAbsent=true"
-          className="aspect-[0.16] object-contain w-[77px] shrink-0"
-          alt="Table decoration"
-        />
+
+      <div className="w-full overflow-x-auto">
+        <table className="w-full">
+          <thead className="bg-[#FAFAFC] border-b border-[#EAECF0]">
+            <tr>
+              <th className="text-left py-3 px-6 text-[13px] text-[#68727D] font-medium">
+                Institution
+              </th>
+              <th className="text-left py-3 px-6 text-[13px] text-[#68727D] font-medium">
+                Total Farmers
+              </th>
+              <th className="text-left py-3 px-6 text-[13px] text-[#68727D] font-medium">
+                Total Insured Land
+              </th>
+              <th className="text-left py-3 px-6 text-[13px] text-[#68727D] font-medium">
+                Financial Exposure
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {portfolioData.map((item, index) => (
+              <tr key={index} className="border-b border-[#EAECF0]">
+                <td className="py-4 px-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full border border-[#EAECF0] bg-[#FAFAFC] flex items-center justify-center">
+                      <img
+                        src={item.institution.avatar}
+                        className="w-5 h-5"
+                        alt="Institution avatar"
+                      />
+                    </div>
+                    <span className="text-[15px] font-semibold text-[#252525]">
+                      {item.institution.name}
+                    </span>
+                  </div>
+                </td>
+                <td className="py-4 px-6 text-sm text-[#68727D]">
+                  {item.totalFarmers}
+                </td>
+                <td className="py-4 px-6 text-sm text-[#68727D]">
+                  {item.totalInsuredLand}
+                </td>
+                <td className="py-4 px-6 text-sm text-[#68727D]">
+                  {item.financialExposure}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      
-      <div
-        className="flex w-full flex-col items-stretch text-sm text-[#68727D] font-medium leading-none justify-center px-6 py-3 max-md:max-w-full max-md:px-5"
-      >
-        <div
-          className="flex w-full items-center gap-[40px_100px] justify-between flex-wrap max-md:max-w-full"
-        >
-          <div
-            className="justify-center items-center self-stretch flex min-h-10 gap-1.5 whitespace-nowrap pr-[var(--Main-System-16px,] pl-[var(--Main-System-16px,] my-auto py-[12px)] rounded-[128px]"
-          >
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6d383312f4297c7c8e887a8c835b5a2fe7e2bf9?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-              alt="Previous"
-            />
-            <div
-              className="text-[#68727D] self-stretch my-auto"
-            >
-              Prev
-            </div>
-          </div>
-          <div
-            className="text-[#68727D] self-stretch min-h-10 my-auto rounded-[128px]"
-          >
-            Page 1 to 8
-          </div>
-          <div
-            className="justify-center items-center self-stretch flex min-h-10 gap-1.5 whitespace-nowrap pr-[var(--Main-System-16px,] pl-[var(--Main-System-16px,] my-auto py-[12px)] rounded-[128px]"
-          >
-            <div
-              className="text-[#68727D] self-stretch my-auto"
-            >
-              Next
-            </div>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3ce50ae31155d54363ffd3679abd7670c65ebeed?placeholderIfAbsent=true"
-              className="aspect-[1] object-contain w-4 self-stretch shrink-0 my-auto"
-              alt="Next"
-            />
-          </div>
-        </div>
+
+      <div className="flex justify-between items-center px-6 py-3 text-sm text-[#68727D] font-medium">
+        <button className="flex items-center gap-1.5">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6d383312f4297c7c8e887a8c835b5a2fe7e2bf9?placeholderIfAbsent=true"
+            className="w-4 h-4"
+            alt="Previous"
+          />
+          <span>Prev</span>
+        </button>
+        <span>Page 1 to 8</span>
+        <button className="flex items-center gap-1.5">
+          <span>Next</span>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3ce50ae31155d54363ffd3679abd7670c65ebeed?placeholderIfAbsent=true"
+            className="w-4 h-4"
+            alt="Next"
+          />
+        </button>
       </div>
     </div>
   );
