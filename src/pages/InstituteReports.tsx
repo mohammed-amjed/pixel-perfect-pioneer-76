@@ -1,5 +1,5 @@
-
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { 
   Tabs, 
   TabsList, 
@@ -27,33 +27,153 @@ import {
   PaginationPrevious 
 } from "@/components/ui/pagination";
 
-// Dummy data for demonstration
-const farmersData = Array.from({ length: 7 }, (_, i) => ({
-  id: `#32689${i + 180}`,
-  name: `Farmer Name`,
-  email: 'username@mail.com',
-  landSize: "4,000 m²",
-  riskLevel: i % 3 === 0 ? "Low" : i % 3 === 1 ? "Moderate" : "High",
-  lastViewed: "03.03.2025",
-  lastUpdate: "03.03.2025"
-}));
+// Enhanced dummy data for farmers
+const farmersData = [
+  {
+    id: "F326891",
+    name: "Ahmed Hassan",
+    email: 'a.hassan@agrimail.com',
+    landSize: "4,500 m²",
+    riskLevel: "Low",
+    lastViewed: "15.03.2025",
+    lastUpdate: "14.03.2025"
+  },
+  {
+    id: "F326892",
+    name: "Sarah Mohamed",
+    email: 's.mohamed@agrimail.com',
+    landSize: "3,200 m²",
+    riskLevel: "Moderate",
+    lastViewed: "14.03.2025",
+    lastUpdate: "13.03.2025"
+  },
+  {
+    id: "F326893",
+    name: "Karim Ali",
+    email: 'k.ali@agrimail.com',
+    landSize: "6,800 m²",
+    riskLevel: "High",
+    lastViewed: "13.03.2025",
+    lastUpdate: "12.03.2025"
+  },
+  {
+    id: "F326894",
+    name: "Fatima Ibrahim",
+    email: 'f.ibrahim@agrimail.com',
+    landSize: "2,900 m²",
+    riskLevel: "Low",
+    lastViewed: "12.03.2025",
+    lastUpdate: "11.03.2025"
+  },
+  {
+    id: "F326895",
+    name: "Omar Khalil",
+    email: 'o.khalil@agrimail.com',
+    landSize: "5,100 m²",
+    riskLevel: "Moderate",
+    lastViewed: "11.03.2025",
+    lastUpdate: "10.03.2025"
+  },
+  {
+    id: "F326896",
+    name: "Layla Ahmed",
+    email: 'l.ahmed@agrimail.com',
+    landSize: "3,700 m²",
+    riskLevel: "High",
+    lastViewed: "10.03.2025",
+    lastUpdate: "09.03.2025"
+  },
+  {
+    id: "F326897",
+    name: "Youssef Mahmoud",
+    email: 'y.mahmoud@agrimail.com',
+    landSize: "4,200 m²",
+    riskLevel: "Low",
+    lastViewed: "09.03.2025",
+    lastUpdate: "08.03.2025"
+  }
+];
 
-const farmsData = Array.from({ length: 7 }, (_, i) => ({
-  id: i + 1,
-  name: `Farmer Name`,
-  email: 'username@mail.com',
-  soilType: i % 3 === 0 ? "Loamy" : i % 3 === 1 ? "Sandy" : "Clay",
-  cropType: ["Wheat", "Sorghum", "Cotton", "Sunflower", "Sesame", "Peanuts", "Onions"][i],
-  amount: "$2,373",
-  landSize: `${i % 2 === 0 ? "1,000" : "2,000"} m²`,
-  date: "01.03.2025"
-}));
+// Enhanced dummy data for farms
+const farmsData = [
+  {
+    id: "FR001",
+    name: "Ahmed Hassan",
+    email: 'a.hassan@agrimail.com',
+    soilType: "Loamy",
+    cropType: "Wheat",
+    amount: "$3,450",
+    landSize: "4,500 m²",
+    date: "15.03.2025"
+  },
+  {
+    id: "FR002",
+    name: "Sarah Mohamed",
+    email: 's.mohamed@agrimail.com',
+    soilType: "Sandy",
+    cropType: "Cotton",
+    amount: "$2,800",
+    landSize: "3,200 m²",
+    date: "14.03.2025"
+  },
+  {
+    id: "FR003",
+    name: "Karim Ali",
+    email: 'k.ali@agrimail.com',
+    soilType: "Clay",
+    cropType: "Sorghum",
+    amount: "$4,200",
+    landSize: "6,800 m²",
+    date: "13.03.2025"
+  },
+  {
+    id: "FR004",
+    name: "Fatima Ibrahim",
+    email: 'f.ibrahim@agrimail.com',
+    soilType: "Loamy",
+    cropType: "Sunflower",
+    amount: "$2,100",
+    landSize: "2,900 m²",
+    date: "12.03.2025"
+  },
+  {
+    id: "FR005",
+    name: "Omar Khalil",
+    email: 'o.khalil@agrimail.com',
+    soilType: "Sandy",
+    cropType: "Peanuts",
+    amount: "$3,750",
+    landSize: "5,100 m²",
+    date: "11.03.2025"
+  },
+  {
+    id: "FR006",
+    name: "Layla Ahmed",
+    email: 'l.ahmed@agrimail.com',
+    soilType: "Clay",
+    cropType: "Sesame",
+    amount: "$2,950",
+    landSize: "3,700 m²",
+    date: "10.03.2025"
+  },
+  {
+    id: "FR007",
+    name: "Youssef Mahmoud",
+    email: 'y.mahmoud@agrimail.com',
+    soilType: "Loamy",
+    cropType: "Onions",
+    amount: "$3,200",
+    landSize: "4,200 m²",
+    date: "09.03.2025"
+  }
+];
 
+// Enhanced statistics data
 const statsData = {
-  farmers: { count: 123, growth: "+1% monthly growth" },
-  policies: { count: 123, growth: "+1% monthly growth" },
-  claims: { count: 123, growth: "+1% monthly growth" },
-  land: { count: "4,000 m²", growth: "+1% monthly growth" }
+  farmers: { count: 1,247, growth: "+3.2% monthly growth" },
+  policies: { count: 892, growth: "+2.8% monthly growth" },
+  claims: { count: 156, growth: "+1.5% monthly growth" },
+  land: { count: "42,600 m²", growth: "+4.1% monthly growth" }
 };
 
 const InstituteReports: React.FC = () => {
@@ -62,7 +182,7 @@ const InstituteReports: React.FC = () => {
   return (
     <AppLayout 
       title="Institute Reports" 
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      subtitle="Comprehensive overview of agricultural portfolio and analytics"
       breadcrumbs={[
         { label: "Financial Institutions", link: "/" },
         { label: "Institute Reports" }
@@ -204,8 +324,12 @@ const InstituteReports: React.FC = () => {
               </TableHeader>
               <TableBody>
                 {farmersData.map((farmer, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="text-center">
+                  <TableRow 
+                    key={index}
+                    className="cursor-pointer hover:bg-gray-50"
+                    onClick={() => window.location.href = `/farmer/${farmer.id}`}
+                  >
+                    <TableCell className="text-center" onClick={(e) => e.stopPropagation()}>
                       <input type="checkbox" className="rounded" />
                     </TableCell>
                     <TableCell>
@@ -236,7 +360,7 @@ const InstituteReports: React.FC = () => {
                     <TableCell>{farmer.id}</TableCell>
                     <TableCell>{farmer.lastViewed}</TableCell>
                     <TableCell>{farmer.lastUpdate}</TableCell>
-                    <TableCell>
+                    <TableCell onClick={(e) => e.stopPropagation()}>
                       <button className="w-6 h-6 text-gray-400 hover:text-gray-600">
                         •••
                       </button>
@@ -380,8 +504,12 @@ const InstituteReports: React.FC = () => {
               </TableHeader>
               <TableBody>
                 {farmsData.map((farm, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="text-center">
+                  <TableRow 
+                    key={index}
+                    className="cursor-pointer hover:bg-gray-50"
+                    onClick={() => window.location.href = `/farmer/${farm.id}`}
+                  >
+                    <TableCell className="text-center" onClick={(e) => e.stopPropagation()}>
                       <input type="checkbox" className="rounded" />
                     </TableCell>
                     <TableCell>
@@ -400,7 +528,7 @@ const InstituteReports: React.FC = () => {
                     <TableCell>{farm.amount}</TableCell>
                     <TableCell>{farm.landSize}</TableCell>
                     <TableCell>{farm.date}</TableCell>
-                    <TableCell>
+                    <TableCell onClick={(e) => e.stopPropagation()}>
                       <button className="w-6 h-6 text-gray-400 hover:text-gray-600">
                         •••
                       </button>
