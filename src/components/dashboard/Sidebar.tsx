@@ -1,10 +1,13 @@
+
 import React from "react";
+import { SignOut } from "lucide-react";
 
 const Sidebar: React.FC = () => {
   return (
     <div
-      className="items-stretch border-r-[color:var(--Stroke-Base,#EAECF0)] flex grow flex-col overflow-hidden w-full bg-white py-6 border-r border-solid"
+      className="items-stretch border-r-[color:var(--Stroke-Base,#EAECF0)] flex grow flex-col overflow-hidden w-full bg-white py-6 border-r border-solid h-full"
     >
+      {/* Top section - Logo and navigation */}
       <div
         className="flex w-full flex-col text-base text-[rgba(37,37,37,1)] font-bold whitespace-nowrap tracking-[-0.24px] leading-[3] justify-center px-7 rounded-[5px] max-md:px-5"
       >
@@ -21,8 +24,10 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* Middle section - Navigation menu */}
       <div
-        className="w-full text-[15px] text-[#68727D] font-semibold leading-none flex-1 mt-8"
+        className="w-full text-[15px] text-[#68727D] font-semibold leading-none mt-8"
       >
         <div className="w-full">
           <div
@@ -98,12 +103,18 @@ const Sidebar: React.FC = () => {
           </div>
         </div>
       </div>
-      <div
-        className="self-center flex max-w-full w-[280px] flex-col items-stretch justify-center mt-8"
-      >
-        <div className="w-full px-7 max-md:px-5">
+      
+      {/* Spacer to push the bottom section down */}
+      <div className="flex-1"></div>
+      
+      {/* Bottom section - Institution name, sign out button, and footer */}
+      <div className="flex flex-col mt-auto">
+        {/* Institution Profile */}
+        <div
+          className="self-center flex max-w-full w-full flex-col items-stretch justify-center px-7 max-md:px-5"
+        >
           <div
-            className="items-center shadow-[0px_1px_2px_0px_rgba(16,24,40,0.04)] flex min-h-[58px] w-full gap-3 rounded-[5px]"
+            className="items-center shadow-[0px_1px_2px_0px_rgba(16,24,40,0.04)] flex min-h-[58px] w-full gap-3 rounded-[5px] px-2"
           >
             <div
               className="items-center self-stretch flex w-full gap-2.5 flex-1 shrink basis-[0%] my-auto"
@@ -130,22 +141,30 @@ const Sidebar: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="w-full text-[15px] text-[#68727D] font-semibold leading-none mt-8"
-      >
+        
+        {/* Sign Out Button */}
         <div
-          className="flex min-h-[46px] w-full items-center gap-3 px-7 max-md:px-5"
+          className="w-full text-[15px] text-[#68727D] font-semibold leading-none mt-4"
         >
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3036edb39a0533e6f3ff473e1c65de7457f0c8e7?placeholderIfAbsent=true"
-            className="aspect-[1] object-contain w-[18px] self-stretch shrink-0 my-auto"
-            alt="Sign out icon"
-          />
           <div
-            className="text-[#68727D] self-stretch flex-1 shrink basis-[0%] my-auto"
+            className="flex min-h-[46px] w-full items-center gap-3 px-7 max-md:px-5 hover:bg-gray-100 cursor-pointer rounded-md transition-colors"
           >
-            Sign Out
+            <SignOut className="w-[18px] h-[18px] text-[#68727D]" />
+            <div
+              className="text-[#68727D] self-stretch flex-1 shrink basis-[0%] my-auto"
+            >
+              Sign Out
+            </div>
+          </div>
+        </div>
+        
+        {/* Footer */}
+        <div className="mt-4 px-7 py-3 text-xs text-[#68727D] border-t border-[#EAECF0]">
+          <p className="text-center">© 2025 Maksat. All rights reserved.</p>
+          <div className="flex justify-center gap-4 mt-1">
+            <span className="hover:text-[#83C541] cursor-pointer">Privacy</span>
+            <span className="hover:text-[#83C541] cursor-pointer">Terms</span>
+            <span className="hover:text-[#83C541] cursor-pointer">Support</span>
           </div>
         </div>
       </div>
